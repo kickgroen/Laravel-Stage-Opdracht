@@ -5,6 +5,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Testing 123</h1>
+    <div style="border: 3px solid black;">
+        <h2>Register</h2>
+        <form action="">
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="email">
+            <input type="password" placeholder="password">
+            <button>Register</button>
+        </form>
+    </div>
 </body>
 </html>
