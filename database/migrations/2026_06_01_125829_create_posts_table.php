@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->sring('title');
+            $table->string('title');
             $table->longText('body');
             $table->foreignId('user_id')->contrained();
         });
