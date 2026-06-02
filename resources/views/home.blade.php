@@ -13,30 +13,28 @@
         <button>Log out</button>
     </form>
     
-    <div style="border: 3px solid black;">
-        <h2>Create a New Post</h2>
-        <form action="/create-post" method="POST">
-            @csrf
-            <input type="text" name="title" placeholder="title">
-            <textarea name="body" placeholder="body content..."></textarea>
-            <button>Save Post</button>
-        </form>
-    </div>
-
-    <div style="border: 3px solid black;">
-        <h2>All Posts</h2>
-        @foreach($posts as $post)
-        <div style="background-color: gray; padding: 10px; margin:10px;">
-            <h3>{{$post['title']}}</h3>
-            {{$post['body']}}
-            <p>Created by {{$post->user->name}}</p>
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <div style="border: 3px solid black;">
+            <h2>Create a New Post</h2>
+            <form action="/create-post" method="POST">
+                @csrf
+                <input type="text" name="title" placeholder="title">
+                <textarea name="body" placeholder="body content..."></textarea>
+                <button>Save Post</button>
+            </form>
         </div>
-        @endforeach
-    </div>
-    
 
-    @else
-    <?php redirect()->route('login') ?>
+        <div style="border: 3px solid black;">
+            <h2>All Posts</h2>
+            @foreach($posts as $post)
+            <div style="background-color: rgba(89, 89, 89, 0.199); padding: 10px; margin:10px; border-radius: 5px;">
+                <h3>{{$post['title']}}</h3>
+                {{$post['body']}}
+                <p>Created by {{$post->user->name}} ({{$post->user->email}})</p>
+            </div>
+            @endforeach
+        </div>
+    </div>
     @endauth
 </body>
 </html>
