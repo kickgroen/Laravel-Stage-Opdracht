@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="border: 3px solid black;">
+    <div style="border: 3px solid black; padding-left: 10px;">
         <h2>Login</h2>
         <form action="/login" method="POST">
             @csrf

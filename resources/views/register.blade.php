@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="border: 3px solid black;">
+    <div style="border: 3px solid black; padding-left: 10px;">
         <h2>Register</h2>
         <form action="/register" method="POST">
             @csrf
-            <input name='loginname' type="text" placeholder="name">
+            <input name='name' type="text" placeholder="name">
             <input name='email' type="text" placeholder="email">
-            <input name='loginpassword' type="password" placeholder="password">
+            <input name='password' type="password" placeholder="password">
             <button>Sign Up</button>
         </form>
         <p>Already have an account? <a href="/login">Login</a></p>

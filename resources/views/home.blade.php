@@ -14,7 +14,7 @@
     </form>
     
     <div style="display: flex; flex-direction: column; gap: 2rem;">
-        <div style="border: 3px solid black;">
+        <div style="border: 3px solid black; padding-left: 10px;">
             <h2>Create a New Post</h2>
             <form action="/create-post" method="POST">
                 @csrf
@@ -24,7 +24,7 @@
             </form>
         </div>
 
-        <div style="border: 3px solid black;">
+        <div style="border: 3px solid black; padding-left: 10px;">
             <h2>All Posts</h2>
             @foreach($posts as $post)
             <div style="background-color: rgba(89, 89, 89, 0.199); padding: 10px; margin:10px; border-radius: 5px;">
