@@ -29,6 +29,7 @@
         <div style="background-color: gray; padding: 10px; margin:10px;">
             <h3>{{$post['title']}}</h3>
             {{$post['body']}}
+            <p>Created by {{$post->user->name}}</p>
         </div>
         @endforeach
     </div>
