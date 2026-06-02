@@ -3,11 +3,16 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $posts = Post::all();
-    return view('home', ['posts' => $posts]);
+    if (Auth::Check()) {
+        return view ('home', ['posts' => Post::all()]);
+    } else {
+        return redirect('/login');
+    }
+    
 });
 
 Route::get('/login', function () {
