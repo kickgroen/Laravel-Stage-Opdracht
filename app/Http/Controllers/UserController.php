@@ -9,12 +9,13 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     public function login(Request $request) {
+
         $incomingFields = $request->validate([
-            'loginname' => 'required',
-            'loginpassword' => 'required'
+            'name' => 'required',
+            'password' => 'required'
         ]);
 
-        if (auth()->attempt(['name' => $incomingFields['loginname'], 'password' => $incomingFields['loginpassword']])) {
+        if (auth()->attempt(['name' => $incomingFields['name'], 'password' => $incomingFields['password']])) {
             $request->session()->regenerate();
         }
 
