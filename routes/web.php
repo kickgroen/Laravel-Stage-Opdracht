@@ -29,4 +29,8 @@ Route::post('/login', [UserController::class, 'login']);
 
 // Blog post related routes :)
 Route::post('/create-post', [PostController::class, 'createPost']);
-Route::post('/get-posts', [PostController::class, 'getPosts']);
+Route::get('/post', function () {
+    return redirect('/');
+});
+
+Route::get('/post/{post}', [PostController::class, 'showPostScreen']);
