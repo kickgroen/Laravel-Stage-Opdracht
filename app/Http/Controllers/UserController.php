@@ -30,7 +30,7 @@ class UserController extends Controller
     public function register(Request $request) {
         $incomingFields = $request->validate([
             'name' => ['required', 'min:3', 'max:10', Rule::unique('users', 'name')],
-            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'email' => ['required', 'email:rfc,dns', Rule::unique('users', 'email')],
             'password' => ['required', 'min:8', "max:200"]
         ]);
 

@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+    @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div style="border: 3px solid black; padding-left: 10px;">
         <h2>Register</h2>
         <form action="/register" method="POST">
