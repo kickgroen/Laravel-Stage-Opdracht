@@ -8,7 +8,7 @@
     @isset($post)
     <div>
         <h1>{{$post->title}} - {{$post->author->name}} ({{$post->author->email}})</h1>
-        <p>{{$post->body}}</p>
+        <p style="width:500px;">{{$post->body}}</p>
         <p><a href="/">Go Back</a></p>
     <div>
     @else
