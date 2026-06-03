@@ -6,6 +6,10 @@
 </head>
 <body>
 
+    @if (session('success') == true)
+    <p>Succesfully created a new post!</p>
+    @endif
+
     @auth
     <p>Congrats, {{$user->name}} you are logged in.</p>
     <form action="/logout" METHOD="POST">

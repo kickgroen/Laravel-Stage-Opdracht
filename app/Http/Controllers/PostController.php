@@ -19,7 +19,7 @@ class PostController extends Controller
         $incomingFields['user_id'] = auth()->id();
         Post::create($incomingFields);
 
-        return redirect('/');
+        return redirect('/')->with('success', true);
     }
 
     public function showPostScreen(Post $post) {
