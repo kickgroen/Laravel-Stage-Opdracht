@@ -12,7 +12,6 @@ Route::get('/', function () {
     } else {
         return redirect('/login');
     }
-    
 });
 
 Route::get('/login', function () {
