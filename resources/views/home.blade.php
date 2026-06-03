@@ -29,8 +29,9 @@
             @foreach($posts as $post)
             <div style="background-color: rgba(89, 89, 89, 0.199); padding: 10px; margin:10px; border-radius: 5px;">
                 <h3>{{$post['title']}}</h3>
-                {{$post['body']}}
-                <p>Created by {{$post->user->name}} ({{$post->user->email}})</p>
+                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{$post['body']}}</p>
+                <p>Created by {{$post->author->name}} ({{$post->author->email}})</p>
+                <p><a href="/post/{{$post->id}}" style="background-color:#e9e9ed; border: #c7c7cf solid 1px; padding:5px; border-radius: 5px; color: black; text-decoration: none;">Open Post</a></p>
             </div>
             @endforeach
         </div>
