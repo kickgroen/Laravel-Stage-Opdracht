@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -19,5 +20,13 @@ class PostController extends Controller
         Post::create($incomingFields);
 
         return redirect('/');
+    }
+
+    public function showPostScreen(Post $post) {
+        if (Auth::Check()) {
+            return view('post', ['post' => $post]);
+        } else {
+            return redirect('/login');
+        }
     }
 }
