@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if (Auth::Check()) {
-        return view ('home', ['posts' => Post::all()]);
+        return view ('home', ['posts' => Post::all(), 'user' => Auth::user()]);
     } else {
         return redirect('/login');
     }
@@ -30,7 +30,10 @@ Route::post('/login', [UserController::class, 'login']);
 // Blog post related routes :)
 Route::post('/create-post', [PostController::class, 'createPost']);
 Route::get('/post', function () {
-    return redirect('/');
+    if (Auth::Check()) {
+        return view('/post', ['user' => Auth::user()]);
+    } else {
+        return redirect('/login');
+    }
 });
-
 Route::get('/post/{post}', [PostController::class, 'showPostScreen']);
