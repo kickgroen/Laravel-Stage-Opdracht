@@ -20,6 +20,7 @@
             <input name="email" type="email" value="{{$user->email}}" disabled>
             <input type="text" name="title" placeholder="title">
             <textarea name="body" placeholder="body content..."></textarea>
+            <!-- <input type="file" name="file"> -->
             <button>Save Post</button>
         </form>
     </div>
